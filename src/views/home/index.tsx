@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-import './style.less';
+import './index.scss';
 
 const Home = () =>{
   const history = useHistory();
