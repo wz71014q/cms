@@ -12,10 +12,10 @@ const Home = () =>{
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 const About = () =>{
-  let match = useRouteMatch();
+  const match = useRouteMatch();
   return (
     <div>
       <h1>About</h1>
@@ -36,13 +36,13 @@ const About = () =>{
         </Route>
       </Switch>
     </div>
-  )
-}
+  );
+};
 interface RouteParams {
   topicId: string
 }
 function Topic() {
-  let params = useParams<RouteParams>();
+  const params = useParams<RouteParams>();
   return <h3>Requested topic ID: {params.topicId}</h3>;
 }
 const Inbox = () =>{
@@ -50,15 +50,15 @@ const Inbox = () =>{
     <div>
       <h1>Inbox</h1>
     </div>
-  )
-}
+  );
+};
 const NotMatch = () =>{
   return (
     <div>
       <h1>NotMatch</h1>
     </div>
-  )
-}
+  );
+};
 
 function App() {
   return (

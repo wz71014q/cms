@@ -1,6 +1,9 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 const Books = () =>{
   const history = useHistory();
+  const location = useLocation();
+  const match = useRouteMatch();
+  console.log(location, match);
   const goBack = () => {
     history.goBack();
   };

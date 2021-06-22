@@ -10,8 +10,8 @@ const Home = () =>{
     <div className="home">
       <h1>Home</h1>
       <ul className="home-ul">
-        <li onClick={() => handleClick('About')}>About</li>
-        <li onClick={() => handleClick('Books')}>Books</li>
+        <li onClick={() => handleClick('about')}>About</li>
+        <li onClick={() => handleClick('books')}>Books</li>
       </ul>
     </div>
   );
