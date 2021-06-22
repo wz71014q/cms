@@ -1,15 +1,16 @@
 # 依赖
 **/node_modules/
 
-# 第三方库
-src/utils/sjcl.js
-
 # 静态文件
-public/
+public/**
 
 # 打包输出目录
 **/dist/
 **/build/
+
+react-app-env.d.ts
+
+scripts/**
 
 # 配置文件
 webpack.config.js
