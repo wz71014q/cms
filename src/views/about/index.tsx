@@ -1,7 +1,7 @@
 import { Link, useRouteMatch } from 'react-router-dom';
 import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 const About = ({ route }: RouteConfigComponentProps) =>{
-  let match = useRouteMatch();
+  const match = useRouteMatch();
   return (
     <div>
       <h1>About</h1>
