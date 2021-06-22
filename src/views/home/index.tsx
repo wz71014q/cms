@@ -5,7 +5,7 @@ const Home = () =>{
   const history = useHistory();
   const handleClick = (path: string): void => {
     history.push(`/${path}`);
-  }
+  };
   return (
     <div className="home">
       <h1>Home</h1>
@@ -14,7 +14,7 @@ const Home = () =>{
         <li onClick={() => handleClick('Books')}>Books</li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default Home;

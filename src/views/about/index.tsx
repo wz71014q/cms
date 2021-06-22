@@ -13,9 +13,12 @@ const About = ({ route }: RouteConfigComponentProps) =>{
         <Link to={`${match.url}/About2`}>About2</Link>
         </li>
       </ul>
-      {renderRoutes(route && route.routes, { someProp: "these extra props are optional", id: 56 })}
+      {renderRoutes(route && route.routes, {
+        someProp: "these extra props are optional",
+        id: 56
+      })}
     </div>
-  )
-}
+  );
+};
 
 export default About;

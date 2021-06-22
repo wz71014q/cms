@@ -11,6 +11,6 @@ const AboutChild = (props: RouteParams) =>{
     <div>{props.id}</div>
   </div>
   );
-}
+};
 
 export default AboutChild;

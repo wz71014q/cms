@@ -61,6 +61,7 @@ module.exports = {
     'nonblock-statement-body-position': 2, //多行的代码块需要用大括号括起来
     'newline-per-chained-call': 2, // 两个以上的链式调用要分多行
     'func-names': [2, 'as-needed'], // 方法需要名称时必须命名
+    'semi': 2,
     'arrow-body-style': 'off',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
