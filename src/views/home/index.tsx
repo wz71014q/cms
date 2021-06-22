@@ -1,15 +1,17 @@
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import './style.less';
+
 const Home = () =>{
+  const history = useHistory();
+  const handleClick = (path: string): void => {
+    history.push(`/${path}`);
+  }
   return (
-    <div>
+    <div className="home">
       <h1>Home</h1>
-      <ul>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/Books">Books</Link>
-        </li>
+      <ul className="home-ul">
+        <li onClick={() => handleClick('About')}>About</li>
+        <li onClick={() => handleClick('Books')}>Books</li>
       </ul>
     </div>
   )
