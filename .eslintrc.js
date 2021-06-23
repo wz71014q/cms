@@ -1,19 +1,10 @@
 module.exports = {
-  extends: ['eslint:recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    babelOptions: {
-      presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-      plugins: [
-        ['@babel/plugin-proposal-decorators', { legacy: true }],
-        ['@babel/plugin-proposal-class-properties', { loose: true }]
-      ]
-    },
     ecmaFeatures: {
       jsx: true
     }
   },
-  plugins: ['react', '@typescript-eslint', 'react-hooks', 'jest'],
   env: {
     browser: true,
     node: true,
@@ -21,9 +12,9 @@ module.exports = {
     jest: true,
     mocha: true
   },
-  // globals: {
-  //   React: true
-  // },
+  globals: {
+    React: true
+  },
   settings: {
     'import/resolver': {
       node: {
@@ -36,9 +27,16 @@ module.exports = {
     'import/extensions': ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types']
   },
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'jest'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended'
+  ],
   rules: {
     // 0代表忽略，1代表警告，2代表错误
-    'camelcase': [2, {allow: ['\w*_\w*']}],
+    camelcase: [2, { allow: ['w*_w*'] }],
     'no-var': 0, // 禁止使用var
     'prefer-const': 2, // 优先使用const，有重新赋值的需求用let
     'object-shorthand': 2, // 对象内部属性尽量使用简写
@@ -61,11 +59,11 @@ module.exports = {
     'nonblock-statement-body-position': 2, //多行的代码块需要用大括号括起来
     'newline-per-chained-call': 2, // 两个以上的链式调用要分多行
     'func-names': [2, 'as-needed'], // 方法需要名称时必须命名
-    'semi': 2,
+    semi: 2,
     'arrow-body-style': 'off',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 'warn' // Checks effect dependencies
+    'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
   }
 };

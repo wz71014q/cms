@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, ReactElement } from 'react';
 import './index.scss';
 
-const Home = () =>{
+const Home = ():ReactElement =>{
   const history = useHistory();
   const handleClick = (path: string) => {
     history.push(`/${path}`);
@@ -15,7 +15,7 @@ const Home = () =>{
     <div className="home">
       <h1>Home</h1>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCounts()}>
+      <button onClick={setCounts}>
         Click me
       </button>
       <ul className="home-ul">
