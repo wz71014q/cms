@@ -1,7 +1,10 @@
-import Home from '../views/home';
-import About from '../views/about';
-import Books from '../views/books';
-import AboutChild from '../views/aboutChild';
+import { lazy } from 'react';
+
+const Home = lazy(() => import('../views/home'));
+const About = lazy(() => import('../views/about'));
+const Books = lazy(() => import('../views/books'));
+const AboutChild = lazy(() => import('../views/aboutChild'));
+const Count = lazy(() => import('../views/count'));
 
 const routes = [
   {
@@ -22,6 +25,10 @@ const routes = [
   {
     path: '/books',
     component: Books
+  },
+  {
+    path: '/count',
+    component: Count
   }
 ];
 
