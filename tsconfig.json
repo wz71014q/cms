@@ -21,6 +21,8 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-, "inde.d.ts"  ]
+    "src",
+    "inde.d.ts"
+  ],
+  "extends": "./tsconfig.path.json"
 }
