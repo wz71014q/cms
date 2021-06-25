@@ -22,13 +22,13 @@ const AboutChild = (props: RouteParams): ReactElement => {
     };
   }, [matchParams.params.aboutid]);
   return (
-  <div>
-    <h3>Grand Child</h3>
-    <div>{ props.someProp }</div>
-    <div>{ props.id }</div>
-    <div>{ matchParams.params.aboutid }</div>
-    <div>{ appContext.username }</div>
-  </div>
+    <div>
+      <h3>Grand Child</h3>
+      <div>{ props.someProp }</div>
+      <div>{ props.id }</div>
+      <div>{ matchParams.params.aboutid }</div>
+      <div>{ appContext.username }</div>
+    </div>
   );
 };
 

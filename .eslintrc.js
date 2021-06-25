@@ -67,6 +67,7 @@ module.exports = {
     'react/jsx-uses-react': 2,
     'react/jsx-uses-vars': 2,
     'react-hooks/rules-of-hooks': 2, // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 2 // Checks effect dependencies
+    'react-hooks/exhaustive-deps': 2, // Checks effect dependencies
+    indent: [2, 2, { SwitchCase: 1, MemberExpression: 1, ArrayExpression: 1, ObjectExpression: 1 }] // 代码缩进
   }
 };

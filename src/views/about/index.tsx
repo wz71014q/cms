@@ -12,10 +12,10 @@ const About = ({ route }: RouteConfigComponentProps): ReactElement => {
         <h1>About</h1>
         <ul>
           <li>
-          <Link to={`${match.url}/About1`}>About1</Link>
+            <Link to={`${match.url}/About1`}>About1</Link>
           </li>
           <li>
-          <Link to={`${match.url}/About2`}>About2</Link>
+            <Link to={`${match.url}/About2`}>About2</Link>
           </li>
         </ul>
         {renderRoutes(route && route.routes, {
