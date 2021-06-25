@@ -13,7 +13,7 @@ const reducer = (state: { count: number }, action: { type: string }) => {
     }
 };
 
-const Home = ():ReactElement =>{
+const Home = ():ReactElement => {
   const history = useHistory();
   const handleClick = (path: string) => {
     history.push(`/${path}`);

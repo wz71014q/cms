@@ -4,7 +4,7 @@ import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
 
 export const AppContext = React.createContext({ username: 'superawesome' });
 
-const About = ({ route }: RouteConfigComponentProps): ReactElement =>{
+const About = ({ route }: RouteConfigComponentProps): ReactElement => {
   const match = useRouteMatch();
   return (
     <AppContext.Provider value={{ username: 'superawesome' }}>

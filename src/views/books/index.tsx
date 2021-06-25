@@ -1,7 +1,7 @@
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 import { ReactElement } from 'react';
 
-const Books = (): ReactElement =>{
+const Books = (): ReactElement => {
   const history = useHistory();
   const location = useLocation();
   const match = useRouteMatch();

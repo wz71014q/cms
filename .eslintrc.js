@@ -36,7 +36,6 @@ module.exports = {
   ],
   rules: {
     // 0代表忽略，1代表警告，2代表错误
-    camelcase: [2, { allow: ['w*_w*'] }],
     'no-var': 0, // 禁止使用var
     'prefer-const': 2, // 优先使用const，有重新赋值的需求用let
     'object-shorthand': 2, // 对象内部属性尽量使用简写
@@ -51,7 +50,7 @@ module.exports = {
     'prefer-spread': 2, // 优先使用...来调用可变参数
     'object-property-newline': 2, // 对象内的元素单独拆分一行
     'prefer-arrow-callback': 2, // 回调函数优先使用箭头函数
-    'no-confusing-arrow': [2, { allowParens: true }], // 避免将比较运算符于箭头函数混淆
+    'no-confusing-arrow': [2, { allowParens: true }], // 避免将比较运算符与箭头函数混淆
     'dot-notation': 2, // 引用对象内非变量属性应尽量使用.
     'no-multi-assign': 2, // 禁止链式赋值
     'no-nested-ternary': 2, // 禁止嵌套三元表达式
@@ -60,10 +59,11 @@ module.exports = {
     'newline-per-chained-call': 2, // 两个以上的链式调用要分多行
     'func-names': [2, 'as-needed'], // 方法需要名称时必须命名
     semi: 2,
-    'arrow-body-style': 'off',
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error',
-    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
+    'arrow-body-style': 0,
+    'arrow-spacing': [2, { before: true, after: true }],
+    'react/jsx-uses-react': 2,
+    'react/jsx-uses-vars': 2,
+    'react-hooks/rules-of-hooks': 2, // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 2 // Checks effect dependencies
   }
 };

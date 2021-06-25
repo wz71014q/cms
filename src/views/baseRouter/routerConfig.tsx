@@ -45,7 +45,7 @@ function Topic() {
   const params = useParams<RouteParams>();
   return <h3>Requested topic ID: {params.topicId}</h3>;
 }
-const Inbox = () =>{
+const Inbox = () => {
   return (
     <div>
       <h1>Inbox</h1>

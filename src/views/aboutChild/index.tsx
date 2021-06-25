@@ -12,7 +12,7 @@ interface MatchParams extends match{
   }
 }
 
-const AboutChild = (props: RouteParams): ReactElement =>{
+const AboutChild = (props: RouteParams): ReactElement => {
   const matchParams: MatchParams = useRouteMatch();
   const appContext = useContext(AppContext);
   useEffect(() => {
