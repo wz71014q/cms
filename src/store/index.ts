@@ -1,4 +1,5 @@
 import { createStore, Action } from 'redux';
+// import { composeWithDevTools } from 'redux-devtools-extension';
 
 function counterReducer(state = { value: 0 }, action: Action) {
   switch (action.type) {
@@ -14,11 +15,3 @@ function counterReducer(state = { value: 0 }, action: Action) {
 const store = createStore(counterReducer);
 
 export default store;
-
-store.subscribe(() => console.log(store.getState()));
-
-store.dispatch({ type: 'counter/incremented' });
-
-store.dispatch({ type: 'counter/incremented' });
-
-store.dispatch({ type: 'counter/decremented' });
