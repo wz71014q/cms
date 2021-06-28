@@ -1,7 +1,6 @@
 .home-ul li {
   cursor: pointer;
   &:hover {
-    color: aqua;
-    text-decoration: 1px solid;
+    text-decoration: underline;
   }
 }

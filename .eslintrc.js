@@ -45,7 +45,7 @@ module.exports = {
     'quote-props': [2, 'as-needed'], // 只用引号引无效标识符的属性
     'array-callback-return': 2, // 数组的方法应该明确标注返回值
     'prefer-destructuring': 0, // 尽量使用解构赋值 , 待讨论, 如this.myArray = tempArr[0]
-    'max-len': [2, 100, { ignoreUrls: true }], // 每行内容不能超过100个字符，忽略检查URL
+    'max-len': [2, 120, { ignoreUrls: true }], // 每行内容不能超过100个字符，忽略检查URL
     'prefer-template': 2, // 字符串的拼接尽量使用ES6模板字符串
     'template-curly-spacing': 2, // 模板字符串字符串与大括号之间加空格
     'prefer-rest-params': 2, // 方法内的参数优先使用...而不是arguments

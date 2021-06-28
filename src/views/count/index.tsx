@@ -1,29 +1,15 @@
-import React, { ReactElement } from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
-import { renderRoutes, RouteConfigComponentProps } from 'react-router-config';
+import { ReactElement } from 'react';
+import store from '@/store';
 
-export const AppContext = React.createContext({ username: 'superawesome' });
-
-const About = ({ route }: RouteConfigComponentProps): ReactElement => {
-  const match = useRouteMatch();
+const About = (): ReactElement => {
+  store.subscribe(() => console.log(store.getState()));
+  store.dispatch({ type: 'counter/incremented' });
+  store.dispatch({ type: 'counter/incremented' });
+  store.dispatch({ type: 'counter/decremented' });
   return (
-    <AppContext.Provider value={{ username: 'superawesome' }}>
-      <div>
-        <h1>About</h1>
-        <ul>
-          <li>
-            <Link to={`${match.url}/About1`}>About1</Link>
-          </li>
-          <li>
-            <Link to={`${match.url}/About2`}>About2</Link>
-          </li>
-        </ul>
-        {renderRoutes(route && route.routes, {
-          someProp: "these extra props are optional",
-          id: 56
-        })}
-      </div>
-    </AppContext.Provider>
+    <div>
+      <h1>count</h1>
+    </div>
   );
 };
 
