@@ -1,10 +1,12 @@
 import { ReactElement } from 'react';
-import store from '@/store';
+import store, { counterSliceStore, incremented } from '@/store';
 
 const About = (): ReactElement => {
-  store.subscribe(() => console.log(store.getState()));
   const handleClick = () => {
     store.dispatch({ type: 'counter/decremented' });
+    counterSliceStore.dispatch(incremented());
+    console.log('store', store.getState());
+    console.log('counterSliceStore', counterSliceStore.getState());
   };
   return (
     <div>

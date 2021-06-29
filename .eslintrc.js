@@ -62,6 +62,7 @@ module.exports = {
     'newline-per-chained-call': 2, // 两个以上的链式调用要分多行
     'func-names': [2, 'as-needed'], // 方法需要名称时必须命名
     semi: 2,
+    'comma-spacing': 2,
     'arrow-body-style': 0,
     'arrow-spacing': [2, { before: true, after: true }],
     'react/jsx-uses-react': 2,
