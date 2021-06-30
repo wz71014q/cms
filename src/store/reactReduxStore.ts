@@ -27,7 +27,9 @@ const counterSlice = createSlice({
 });
 
 const counterSliceStore = configureStore({
-  reducer: counterSlice.reducer
+  reducer: {
+    counter: counterSlice.reducer
+  }
 });
 const { incremented, decremented, incrementByAmount } = counterSlice.actions;
 const incrementAsync = (amount: number) => (dispatch: Dispatch): void => {
@@ -43,6 +45,6 @@ export const useAppDispatch = (): Dispatch => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 
-const selectCount = (state: RootState): number => state.value;
+const selectCount = (state: RootState): number => state.counter.value;
 
 export { counterSliceStore, incremented, decremented, incrementAsync, selectCount, incrementByAmount };
