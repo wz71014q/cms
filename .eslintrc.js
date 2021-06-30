@@ -64,6 +64,8 @@ module.exports = {
     semi: 2,
     'comma-spacing': 2,
     'arrow-body-style': 0,
+    'object-property-newline': [2, { allowAllPropertiesOnSameLine: true }],
+    'no-multi-spaces': [2, { ignoreEOLComments: false }],
     'arrow-spacing': [2, { before: true, after: true }],
     'react/jsx-uses-react': 2,
     'react/jsx-uses-vars': 2,

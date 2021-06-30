@@ -6,13 +6,17 @@ import routes from '@/router';
 import { renderRoutes } from 'react-router-config';
 import Loading from '@/components/Loading';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import { counterSliceStore } from '@/store/reactReduxStore';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <ErrorBoundary>
         <Suspense fallback={<Loading />}>
-          {renderRoutes(routes)}
+          <Provider store={counterSliceStore}>
+            {renderRoutes(routes)}
+          </Provider>
         </Suspense>
       </ErrorBoundary>
     </Router>

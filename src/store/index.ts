@@ -1,5 +1,4 @@
-import { createStore, Action } from 'redux';
-// import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore, Action, Dispatch } from 'redux';
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 const defaultStore = { value: 0 };
@@ -27,14 +26,28 @@ const counterSlice = createSlice({
     },
     decremented: state => {
       state.value -= 1;
+    },
+    incrementByAmount: (state, action) => {
+      state.value += action.payload;
     }
   }
 });
 
+const { incremented, decremented, incrementByAmount } = counterSlice.actions;
+const incrementAsync = (amount: number) => (dispatch: Dispatch): void => {
+  setTimeout(() => {
+    dispatch(incrementByAmount(amount));
+  }, 3000);
+};
+
 const counterSliceStore = configureStore({
   reducer: counterSlice.reducer
 });
-const { incremented, decremented } = counterSlice.actions;
 
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
+const selectCount = (state: RootState): number => state.value;
+
+export { counterSliceStore, incremented, decremented, incrementAsync, selectCount };
 export default store;
-export { counterSliceStore, incremented, decremented };

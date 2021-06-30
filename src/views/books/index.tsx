@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { ReactElement } from 'react';
-import store from '@/store';
+import store from '@/store/reduxStore';
 
 const Books = (): ReactElement => {
   store.subscribe(() => {
