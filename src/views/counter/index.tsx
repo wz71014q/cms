@@ -1,32 +1,36 @@
 import { ReactElement } from 'react';
+import store from '@/store';
 import {
-  counterSliceStore,
-  incremented,
-  incrementByAmount,
-  useAppSelector,
-  incrementAsync
-} from '@/store/reactReduxStore';
+  increment, decrement, incrementByAmount, fetchUserById
+} from './counterSlice';
+import { useState } from 'react';
 
-const About = (): ReactElement => {
-  const count = useAppSelector(state => state.counter.value);
+const Counter = (): ReactElement => {
+  const [count, setCount] = useState(0);
+  store.subscribe(() => {
+    const newState = store.getState().status.value;
+    console.log('newState', newState);
+    setCount(newState);
+  });
   const handleClick = () => {
-    counterSliceStore.dispatch(incremented());
+    store.dispatch(increment());
   };
   const handleIncrementByAmount = () => {
-    counterSliceStore.dispatch(incrementByAmount(3));
+    store.dispatch(incrementByAmount(3));
   };
   const handleIncrementAsync = () => {
-    counterSliceStore.dispatch(incrementAsync(5));
+    fetchUserById();
+    store.dispatch(decrement());
   };
   return (
     <div>
-      <h1>count</h1>
-      <h1>{count}</h1>
-      <p className="pointer" onClick={() => handleClick()}>incremented</p>
-      <p className="pointer" onClick={() => handleIncrementByAmount()}>incrementByAmount</p>
-      <p className="pointer" onClick={() => handleIncrementAsync()}>incrementAsync</p>
+      <h1>counter</h1>
+      <p>{count}</p>
+      <p className="pointer" onClick={handleClick}>incremented</p>
+      <p className="pointer" onClick={handleIncrementByAmount}>incrementByAmount</p>
+      <p className="pointer" onClick={handleIncrementAsync}>incrementAsync</p>
     </div>
   );
 };
 
-export default About;
+export default Counter;

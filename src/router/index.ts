@@ -5,6 +5,7 @@ const About = lazy(() => import('@/views/about'));
 const Books = lazy(() => import('@/views/books'));
 const AboutChild = lazy(() => import('@/views/aboutChild'));
 const Count = lazy(() => import('@/views/count'));
+const Counter = lazy(() => import('@/views/counter'));
 const ReducerCount = lazy(() => import('@/views/reducerCount'));
 const UseStateCount = lazy(() => import('@/views/useStateCount'));
 
@@ -35,6 +36,11 @@ const routes = [
     name: 'count',
     path: '/count',
     component: Count
+  },
+  {
+    name: 'counter',
+    path: '/counter',
+    component: Counter
   },
   {
     name: 'reducerCount',

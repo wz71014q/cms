@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
+import axios, { AxiosRequestConfig, AxiosPromise, Method } from 'axios';
 
 const defaultRequest = (options: AxiosRequestConfig): AxiosPromise => {
   const axiosIns = axios.create(options);
@@ -10,6 +10,10 @@ const defaultRequest = (options: AxiosRequestConfig): AxiosPromise => {
   }
   return axiosIns.request(options);
 };
+
+export interface baseAxiosRequestConfig extends AxiosRequestConfig {
+  method?: Method
+}
 
 export default defaultRequest;
 

@@ -3,6 +3,6 @@ import counterSlice from '@/views/counter/counterSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterSlice
+    status: counterSlice
   }
 });

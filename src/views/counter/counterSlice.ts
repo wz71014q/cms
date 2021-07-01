@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import axiosRequest, { baseAxiosRequestConfig } from '@/service';
+import { userId } from '@/service/api';
 
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: 'status',
   initialState: {
     value: 0
   },
@@ -14,21 +16,26 @@ export const counterSlice = createSlice({
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload;
-    }
+    },
   }
 });
 
-// const fetchUserById = (userId) => {
-//   return async (dispatch, getState) => {
-//     try {
-//       const user = await userAPI.fetchById(userId);
-//       dispatch(incrementByAmount(user));
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   };
-// };
+const fetchUserById = async (): Promise<void> => {
+  const options: baseAxiosRequestConfig = {
+    method: 'GET',
+    url: userId
+  };
+  try {
+    const user = await axiosRequest(options);
+    const userId = user.data.data.userId;
+    console.log(user, userId);
+    // dispatch(incrementByAmount(userId));
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
 export default counterSlice.reducer;
+export { increment, decrement, incrementByAmount, fetchUserById };

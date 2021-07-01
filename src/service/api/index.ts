@@ -1,0 +1,1 @@
+export const userId = 'http://10.9.8.227:9091/mock/28/getUserId';
