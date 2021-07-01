@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { createSlice, configureStore, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, configureStore } from '@reduxjs/toolkit';
 // Define a type for the slice state
 interface CounterState {
   value: number
@@ -20,7 +20,7 @@ const counterSlice = createSlice({
     decremented: state => {
       state.value -= 1;
     },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
+    incrementByAmount: (state, action) => {
       state.value += action.payload;
     },
   }
