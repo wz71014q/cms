@@ -23,20 +23,17 @@ const postsSlice = createSlice({
     }
   },
   extraReducers: {
-    pending: (state) => {
+    [fetchPosts.pending.type]: (state) => {
       state.status = 'loading';
+    },
+    [fetchPosts.fulfilled.type]: (state, action) => {
+      state.status = 'succeeded';
+      state.userId = action.userId;
+    },
+    [fetchPosts.rejected.type]: (state, action) => {
+      state.status = 'failed';
+      state.error = action.payload;
     }
-    // [fetchPosts.pending]: (state) => {
-    //   state.status = 'loading';
-    // },
-    // [fetchPosts.fulfilled]: (state, action) => {
-    //   state.status = 'succeeded';
-    //   state.userId = action.userId;
-    // },
-    // [fetchPosts.rejected]: (state, action) => {
-    //   state.status = 'failed';
-    //   state.error = action.payload;
-    // }
   }
 });
 

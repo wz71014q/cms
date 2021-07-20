@@ -5,11 +5,12 @@ import { fetchPosts } from './postsSlice';
 
 const PostsList = (): ReactElement => {
   const dispatch = useDispatch();
-  // const posts = useSelector((state: RootState) => state.posts.posts);
+  const userId = useSelector((state: RootState) => state.posts.userId);
   const postStatus = useSelector((state: RootState) => state.posts.status);
-  // const error = useSelector((state: RootState) => state.posts.error);
+  const error = useSelector((state: RootState) => state.posts.error);
 
   useEffect(() => {
+    console.log('useEffect', postStatus);
     if (postStatus === 'idle') {
       dispatch(fetchPosts());
     }
@@ -17,14 +18,13 @@ const PostsList = (): ReactElement => {
 
   let content;
 
-  // if (postStatus === 'loading') {
-  //   content = <div className='loader'>Loading...</div>;
-  // } else if (postStatus === 'succeeded') {
-  //   const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date));
-  //   content = orderedPosts.map((post) => <PostExcerpt key={post.id} post={post} />);
-  // } else if (postStatus === 'error') {
-  //   content = <div>{error}</div>;
-  // }
+  if (postStatus === 'loading') {
+    content = <div className='loader'>Loading...</div>;
+  } else if (postStatus === 'succeeded') {
+    content = <div className='succeeded'>succeeded, {userId}</div>;
+  } else if (postStatus === 'error') {
+    content = <div>{error}</div>;
+  }
 
   return (
     <section className='posts-list'>
