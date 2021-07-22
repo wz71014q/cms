@@ -5,13 +5,18 @@ const initialState = {
   posts: [],
   userId: '',
   status: 'idle',
-  error: null
+  error: ''
 };
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  const response = await fetchUserById();
-  const userId = response.data.data.userId;
-  return userId;
+  try {
+    const response = await fetchUserById();
+    const userId = response.data.data.userId;
+    return userId;
+  } catch (error) {
+    console.error(error);
+    return Promise.reject(error);
+  }
 });
 
 const postsSlice = createSlice({
@@ -28,7 +33,7 @@ const postsSlice = createSlice({
     },
     [fetchPosts.fulfilled.type]: (state, action) => {
       state.status = 'succeeded';
-      state.userId = action.userId;
+      state.userId = action.payload;
     },
     [fetchPosts.rejected.type]: (state, action) => {
       state.status = 'failed';
@@ -40,7 +45,3 @@ const postsSlice = createSlice({
 export const { postUpdated } = postsSlice.actions;
 
 export default postsSlice.reducer;
-
-// export const selectAllPosts = (state: any) => state.posts.posts;
-
-// export const selectPostById = (state, postId) => state.posts.posts.find((post) => post.id === postId);

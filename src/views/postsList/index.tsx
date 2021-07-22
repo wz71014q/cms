@@ -21,9 +21,9 @@ const PostsList = (): ReactElement => {
   if (postStatus === 'loading') {
     content = <div className='loader'>Loading...</div>;
   } else if (postStatus === 'succeeded') {
-    content = <div className='succeeded'>succeeded, {userId}</div>;
-  } else if (postStatus === 'error') {
-    content = <div>{error}</div>;
+    content = <div className='succeeded'>succeeded, userId = {userId}</div>;
+  } else if (postStatus === 'failed') {
+    content = <div>somthing was wrong;<br/>{error}</div>;
   }
 
   return (
