@@ -8,7 +8,7 @@ import { useState } from 'react';
 const Counter = (): ReactElement => {
   const [count, setCount] = useState(0);
   store.subscribe(() => {
-    const newState = store.getState().status.value;
+    const newState = store.getState().countStatus.value;
     console.log('newState', newState);
     setCount(newState);
   });

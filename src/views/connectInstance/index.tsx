@@ -2,34 +2,34 @@ import { Component, ReactElement } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { RootState } from '@/store';
-import { fetchPosts, postUpdated } from '@/store/slices/postsSlice';
+import { fetchUserInfo, postUpdated } from '@/store/slices/userInfoSlice';
 import './index.scss';
 
 class ConnectInstance extends Component<PropsFromRedux & RouteComponentProps> {
   render(): ReactElement {
-    const { userId, postUpdated, fetchPosts } = this.props;
+    const { userId, postUpdated, fetchUserInfo } = this.props;
     return (
       <section className='connect-instance'>
         <h2>ConnectInstance</h2>
         <div className='point' onClick={postUpdated}>postUpdated</div>
-        <div className='point' onClick={fetchPosts}>fetchPosts</div>
+        <div className='point' onClick={fetchUserInfo}>fetchUserInfo</div>
         userId: {userId}
       </section>
     );
   }
 }
 
-//将state.posts.userId绑定到props的Connect
+//将state.userInfo.userId绑定到props的Connect
 const mapStateToProps = (state: RootState) => {
   return {
-    userId: state.posts.userId
+    userId: state.userInfo.userId
   };
 };
 
 // 将action的方法绑定到props上
 const mapDispatchToProps = {
   postUpdated: () => (postUpdated('555')),
-  fetchPosts: () => (fetchPosts())
+  fetchUserInfo: () => (fetchUserInfo())
 };
 
 const connector = connect(mapStateToProps, mapDispatchToProps);

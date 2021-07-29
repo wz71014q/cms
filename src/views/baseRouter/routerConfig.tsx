@@ -1,5 +1,7 @@
+import { ReactElement } from 'react';
 import { Switch, Route, Link, useRouteMatch, useParams } from 'react-router-dom';
-const Home = () =>{
+
+const Home = () => {
   return (
     <div>
       <h1>Home</h1>
@@ -14,17 +16,17 @@ const Home = () =>{
     </div>
   );
 };
-const About = () =>{
+const About = () => {
   const match = useRouteMatch();
   return (
     <div>
       <h1>About</h1>
       <ul>
         <li>
-        <Link to={`${match.url}/About1`}>About1</Link>
+          <Link to={`${match.url}/About1`}>About1</Link>
         </li>
         <li>
-        <Link to={`${match.url}/About2`}>About2</Link>
+          <Link to={`${match.url}/About2`}>About2</Link>
         </li>
       </ul>
       <Switch>
@@ -52,7 +54,7 @@ const Inbox = () => {
     </div>
   );
 };
-const NotMatch = () =>{
+const NotMatch = () => {
   return (
     <div>
       <h1>NotMatch</h1>
@@ -60,7 +62,7 @@ const NotMatch = () =>{
   );
 };
 
-function App() {
+function App(): ReactElement {
   return (
     <Switch>
       <Route exact path="/" component={Home} />

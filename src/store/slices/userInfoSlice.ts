@@ -2,13 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchUserById } from '@/service/client';
 
 const initialState = {
-  posts: [],
   userId: '',
   status: 'idle',
   error: ''
 };
 
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
+export const fetchUserInfo = createAsyncThunk('', async () => {
   try {
     const response = await fetchUserById();
     const userId = response.data.data.userId;
@@ -19,8 +18,8 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
   }
 });
 
-const postsSlice = createSlice({
-  name: 'posts',
+const userInfoSlice = createSlice({
+  name: 'userInfo',
   initialState,
   reducers: {
     postUpdated(state, action) {
@@ -28,20 +27,20 @@ const postsSlice = createSlice({
     }
   },
   extraReducers: {
-    [fetchPosts.pending.type]: (state) => {
+    [fetchUserInfo.pending.type]: (state) => {
       state.status = 'loading';
     },
-    [fetchPosts.fulfilled.type]: (state, action) => {
+    [fetchUserInfo.fulfilled.type]: (state, action) => {
       state.status = 'succeeded';
       state.userId = action.payload;
     },
-    [fetchPosts.rejected.type]: (state, action) => {
+    [fetchUserInfo.rejected.type]: (state, action) => {
       state.status = 'failed';
       state.error = action.payload;
     }
   }
 });
 
-export const { postUpdated } = postsSlice.actions;
+export const { postUpdated } = userInfoSlice.actions;
 
-export default postsSlice.reducer;
+export default userInfoSlice.reducer;
