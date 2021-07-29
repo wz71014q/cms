@@ -1,7 +1,7 @@
 import { ReactElement, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
-import { fetchPosts } from './postsSlice';
+import { fetchPosts } from '@/store/slices/postsSlice';
 
 const PostsList = (): ReactElement => {
   const dispatch = useDispatch();

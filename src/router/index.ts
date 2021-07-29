@@ -9,6 +9,7 @@ const Counter = lazy(() => import('@/views/counter'));
 const ReducerCount = lazy(() => import('@/views/reducerCount'));
 const UseStateCount = lazy(() => import('@/views/useStateCount'));
 const PostsList = lazy(() => import('@/views/postsList'));
+const ConnectInstance = lazy(() => import('@/views/connectInstance'));
 
 const routes = [
   {
@@ -57,6 +58,11 @@ const routes = [
     name: 'postsList',
     path: '/postsList',
     component: PostsList
+  },
+  {
+    name: 'connectInstance',
+    path: '/connectInstance',
+    component: ConnectInstance
   }
 ];
 

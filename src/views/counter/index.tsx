@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import store from '@/store';
 import {
   increment, decrement, incrementByAmount, fetchUserById
-} from './counterSlice';
+} from '@/store/slices/counterSlice';
 import { useState } from 'react';
 
 const Counter = (): ReactElement => {
