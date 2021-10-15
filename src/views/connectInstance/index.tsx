@@ -1,4 +1,4 @@
-import { Component, ReactElement } from 'react';
+import { Component, ReactNode } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { RootState } from '@/store';
@@ -6,7 +6,7 @@ import { fetchUserInfo, postUpdated } from '@/store/slices/userInfoSlice';
 import './index.scss';
 
 class ConnectInstance extends Component<PropsFromRedux & RouteComponentProps> {
-  render(): ReactElement {
+  render(): ReactNode {
     const { userId, postUpdated, fetchUserInfo } = this.props;
     return (
       <section className='connect-instance'>

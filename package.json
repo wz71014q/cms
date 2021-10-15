@@ -81,6 +81,7 @@
     "axios": "^0.21.1",
     "bfj": "^7.0.2",
     "fs-extra": "^9.0.1",
+    "mobx": "^6.3.2",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",

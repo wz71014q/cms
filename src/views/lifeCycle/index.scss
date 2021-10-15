@@ -1,0 +1,6 @@
+.home-ul li, .point {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

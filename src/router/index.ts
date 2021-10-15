@@ -10,6 +10,7 @@ const ReducerCount = lazy(() => import('@/views/reducerCount'));
 const UseStateCount = lazy(() => import('@/views/useStateCount'));
 const UserInfos = lazy(() => import('@/views/userInfos'));
 const ConnectInstance = lazy(() => import('@/views/connectInstance'));
+const LifeCycle = lazy(() => import('@/views/lifeCycle'));
 
 const routes = [
   {
@@ -63,6 +64,11 @@ const routes = [
     name: 'connectInstance',
     path: '/connectInstance',
     component: ConnectInstance
+  },
+  {
+    name: 'lifeCycle',
+    path: '/lifeCycle',
+    component: LifeCycle
   }
 ];
 
